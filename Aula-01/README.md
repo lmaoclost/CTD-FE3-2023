@@ -8,7 +8,7 @@ Babel
 Webpack
 
 Extensões bacanas:
-ext install rocketseat.RocketseatReactJS
+Rocketseat ReactJS
 auto import
 auto rename tag
 color highlight
