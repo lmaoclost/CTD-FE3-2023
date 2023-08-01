@@ -42,4 +42,5 @@ export default class ClassApp extends Component {
       </>
     )
   }
+
 }
