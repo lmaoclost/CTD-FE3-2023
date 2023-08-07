@@ -1,0 +1,48 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.imageContainer {
+  height: 22rem;
+  border: 0.5rem groove lightgray;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.cardGameImage {
+  height: 22rem;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardGameImage:hover {
+  transform: scale(1.1);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.likeButton {
+  background-color: #198754;
+}
+
+.dislikeButton {
+  background-color: #dc3545;
+}
