@@ -1,16 +1,16 @@
 .imageContainer {
   height: 22rem;
   border: 0.5rem groove lightgray;
-  border-radius: 15px;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
-.cardGameImage {
+.cardUserImage {
   height: 22rem;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
 }
 
-.cardGameImage:hover {
+.cardUserImage:hover {
   transform: scale(1.1);
 }

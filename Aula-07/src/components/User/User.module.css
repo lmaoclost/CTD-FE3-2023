@@ -11,13 +11,13 @@
   overflow: hidden;
 }
 
-.cardGameImage {
+.cardUserImage {
   height: 22rem;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
 }
 
-.cardGameImage:hover {
+.cardUserImage:hover {
   transform: scale(1.1);
 }
 
@@ -30,9 +30,9 @@
 
 .button {
   padding: 0.5rem;
-  transition: all 0.2s ease-in-out;
   border: none;
   border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {

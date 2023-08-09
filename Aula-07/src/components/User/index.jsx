@@ -16,9 +16,9 @@ export default function User({ user }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img className={styles.cardGameImage} src={user.image} alt={`imagem do usuário ${user.userName}`} />
+        <img className={styles.cardUserImage} src={user.image} alt={`imagem do usuário ${user.userName}`} />
       </div>
-      <h3>Oi eu sou {user.userName} e tenho {likeAmount} de likes</h3>
+      <h3>Oi eu sou {user.userName} e tenho {likeAmount} like{likeAmount > 1 ? 's' : ''}</h3>
 
       <div className={styles.buttonContainer}>
         <button className={`${styles.button} ${styles.likeButton}`} onClick={() => updateLikeAmount('up')}>Like 👍</button>
