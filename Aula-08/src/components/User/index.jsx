@@ -16,7 +16,11 @@ export default function User({ user, removeUserFromList }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img className={styles.cardUserImage} src={`http://github.com/${user.userName}.png`} alt={`imagem do usuário ${user.userName}`} />
+        <img
+          className={styles.cardUserImage}
+          src={`http://github.com/${user.userName}.png`}
+          alt={`imagem do usuário ${user.userName}`}
+        />
       </div>
       <h3>Oi eu sou {user.name} e tenho {likeAmount} like{likeAmount > 1 ? 's' : ''}</h3>
 

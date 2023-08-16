@@ -8,19 +8,16 @@ function App() {
 
   const handleUserSubmit = (event) => {
     event.preventDefault();
-
     const formData = new FormData(event.target);
-    const { name, userName } = Object.fromEntries(formData);
+    const user = Object.fromEntries(formData);
 
-    if (name.length > 3 && userName.length > 3) {
-      setUserList([...userList, { name, userName }])
+    if (user.name.length > 3 && user.userName.length > 3) {
+      setUserList([...userList, user]);
     }
-
-    return
   }
 
   const removeUserFromList = (userToBeRemoved) => {
-    const newList = userList.filter((user) => {
+    const newList = userList.filter(user => {
       return userToBeRemoved !== user
     });
     setUserList(newList);
