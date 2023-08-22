@@ -1,0 +1,30 @@
+.main {
+  padding: 2rem 0;
+}
+
+.listSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.listContainer {
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+}
+
+.listContainer ul {
+  list-style-type: none;
+}
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 0;
+}
