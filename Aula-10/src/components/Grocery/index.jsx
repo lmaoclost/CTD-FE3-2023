@@ -1,6 +1,6 @@
-import styles from './grocery.module.css'
+import styles from './grocery.module.css';
 
-export default function Grocery({ grocery, toggleGroceryBoughtStatus }) {
+export function Grocery({ grocery, toggleGroceryBoughtStatus }) {
   return (
     <div className={styles.card}>
       <input type="checkbox" onClick={toggleGroceryBoughtStatus} />
