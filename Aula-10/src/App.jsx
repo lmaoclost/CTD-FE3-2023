@@ -11,7 +11,7 @@ function App() {
     event.preventDefault();
 
     const newGrocery = { name: groceryName, amount: groceryAmount, isBought: false };
-    setGroceryList((state) => [...state, newGrocery]);
+    setGroceryList((OldGroceryList) => [...OldGroceryList, newGrocery]);
   }
 
   const toggleGroceryBoughtStatus = (groceryToBeToggled) => {
