@@ -10,18 +10,11 @@
 }
 
 .card span {
-  color: #fff;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 
 .card h3 {
-  color: #fff;
-  font-family: Poppins;
   font-size: 2rem;
-  font-style: normal;
   font-weight: 900;
-  line-height: normal;
 }

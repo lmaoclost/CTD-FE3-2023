@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Card } from './Card';
+import { useState } from 'react'
+import { CardSection } from './components/CardSection';
 import styles from './app.module.css';
 // Aqui você irá escrever as suas funções de Validação, para verificar se o Formulário foi preenchido corretamente
 
@@ -14,7 +14,6 @@ function App() {
     /* Validações realizadas:
       -> Nome da cor: possuir ao menos 3 caracteres;
       -> Código da cor: possuir ao menos 7 caracteres
-      -> Código da cor: possuir ao menos 1 número (foi utilizado RegExp)
       -> Código da cor: o primeiro caractere deve ser o "#" (NOTA: Regra adicionada pelo professor)
     */
 
@@ -25,36 +24,39 @@ function App() {
     ) {
       setFormValido(true);
       return true;
-    } else {
+    }
+    else {
       setFormValido(false);
       return false;
     }
   }
 
-  const handleGrocerySubmit = (event) => {
+  const adicionaCor = (event) => {
     event.preventDefault();
-
     const formValidado = validaFormulario(nomeDaCor, hexDaCor);
 
     if (formValidado) {
       const novaCor = { nomeDaCor: nomeDaCor, hexDaCor: hexDaCor };
-      setListaDeCores((CoresAntigas) => [...CoresAntigas, novaCor]);
+      setListaDeCores((listaDeCoresAntiga) => [...listaDeCoresAntiga, novaCor]);
     }
   }
 
   return (
     <main className={styles.main}>
-      {/* Comece a desenvolver o seu Código por aqui :) */}
-      <form className={`${styles.FormContainer} ${formValido ? '' : styles.FormContainerError}`} onSubmit={handleGrocerySubmit}>
+      <form
+        className={`${styles.FormContainer} ${formValido ? '' : styles.FormContainerError}`}
+        onSubmit={adicionaCor}
+      >
         <h1>ADICIONAR NOVA COR</h1>
+        {/* Comece a desenvolver o seu Código por aqui :) */}
         <div className={styles.inputsContainer}>
           <div>
             <label htmlFor="nomeDaCor">Nome</label>
             <input
               type="text"
-              name='nomeDaCor'
-              id='nomeDaCor'
-              placeholder='Escreva o nome da cor'
+              name="nomeDaCor"
+              id="nomeDaCor"
+              placeholder="Escreva o nome da cor"
               onChange={(event) => setNomeDaCor(event.target.value)}
               value={nomeDaCor}
             />
@@ -63,40 +65,25 @@ function App() {
             <label htmlFor="hexDaCor">Cor</label>
             <input
               type="text"
-              name='hexDaCor'
-              id='hexDaCor'
-              placeholder='Insira sua cor no formato Hexadecimal'
+              name="hexDaCor"
+              id="hexDaCor"
+              placeholder="Insira sua cor no formato Hexadecimal"
               onChange={(event) => setHexDaCor(event.target.value)}
               value={hexDaCor}
             />
           </div>
         </div>
         <div className={styles.buttonContainer}>
-          <button
-            type="submit"
-          >Adicionar
-          </button>
+          <button type="submit">Adicionar</button>
         </div>
       </form>
-      <small>
-        {formValido ? '' : 'Por favor, verifique os dados inseridos no formulário'}
-      </small>
-      <section>
-        <h2>CORES FAVORITAS</h2>
-        <div className={styles.listContainer}>
-          {listaDeCores && (
-            listaDeCores.map((cor, index) => {
-              return (
-                <Card
-                  key={index}
-                  cor={cor}
-                />
-              )
-            })
-          )}
-        </div>
-      </section>
-    </main >
+      {!formValido && (
+        <small>
+          Por favor, verifique os dados inseridos no formulário
+        </small>
+      )}
+      <CardSection listaDeCores={listaDeCores} />
+    </main>
   )
 }
 
