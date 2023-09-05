@@ -1,17 +1,30 @@
-import { useEffect } from "react"
+import { useEffect, useState } from 'react'
 
 export function PerfilGithub() {
+  const [nomeUsuario, setNomeUsuario] = useState('Andre')
+  const [idadeUsuario, setIdadeUsuario] = useState(32)
+
   useEffect(() => {
-    console.log('Entrou na tela')
+    alert(`${nomeUsuario} ENTROU na tela e tem ${idadeUsuario}`)
 
     return () => {
-      console.log('Saiu de tela')
+      alert(`${nomeUsuario} SAIU da tela e tem ${idadeUsuario}`)
     }
-  }, [])
+  }, [idadeUsuario, nomeUsuario])
 
   return (
-    <>
+    <div>
       <h1>Olá :)</h1>
-    </>
+      <input
+        type="text"
+        value={nomeUsuario}
+        onChange={(e) => setNomeUsuario(e.target.value)}
+      />
+      <input
+        type="number"
+        value={idadeUsuario}
+        onChange={(e) => setIdadeUsuario(e.target.value)}
+      />
+    </div>
   )
 }

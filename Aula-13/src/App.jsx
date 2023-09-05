@@ -5,12 +5,16 @@ function App() {
   const [exibePerfil, setExibePerfil] = useState(false);
 
   const alternaVisibilidade = () => {
-    setExibePerfil((valorAnterior) => !valorAnterior);
+    setExibePerfil((valorAnterior) => !valorAnterior)
   }
 
   return (
     <>
-      <button onClick={alternaVisibilidade}>Exibe Perfil</button>
+      <button
+        onClick={alternaVisibilidade}
+      >
+        {exibePerfil ? 'Esconder' : 'Exibir'} Perfil
+      </button>
       {exibePerfil && (<PerfilGithub />)}
     </>
   )
