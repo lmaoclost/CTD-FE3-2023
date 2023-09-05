@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #151515;
+  color: #fff;
+}
+
+h1,
+h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding: 1rem 0;
+}
