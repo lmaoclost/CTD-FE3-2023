@@ -8,26 +8,36 @@ function App() {
 
   useEffect(() => {
     async function carregaPerfil() {
-      const response = await fetch('https://api.github.com/users/lmaoclost');
-      const perfil = await response.json();
-      setPerfil(perfil);
+      try {
+        const response = await fetch('https://api.github.com/users/schelen01');
+        const perfil = await response.json();
+        setPerfil(perfil);
+      } catch (error) {
+        console.log(error.message)
+      }
     }
     carregaPerfil();
   }, [])
 
   const alternaVisibilidade = () => {
-    setExibePerfil((valorAnterior) => !valorAnterior);
+    setExibePerfil((valorAnterior) => !valorAnterior)
   }
 
   return (
-    <main className={styles.main}>
-      <section id="card" className={styles.cardSection}>
-        <button onClick={alternaVisibilidade}>Exibe Perfil</button>
-        <div className={styles.cardContainer}>
-          {exibePerfil && (<PerfilGithub perfil={perfil} />)}
-        </div>
-      </section>
-    </main>
+    <>
+      <main className={styles.main}>
+        <section id='card' className={styles.cardSection}>
+          <button
+            onClick={alternaVisibilidade}
+          >
+            {exibePerfil ? 'Esconder' : 'Exibir'} Perfil
+          </button>
+          <div className={styles.cardContainer}>
+            {exibePerfil && (<PerfilGithub perfil={perfil} />)}
+          </div>
+        </section>
+      </main>
+    </>
   )
 }
 
