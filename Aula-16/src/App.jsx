@@ -1,10 +1,7 @@
 import { RouteList } from './routes';
 
-const App = () => {
+export function App() {
   return (
-    <>
-      <RouteList />
-    </>
-  );
+    <RouteList />
+  )
 }
-export default App;

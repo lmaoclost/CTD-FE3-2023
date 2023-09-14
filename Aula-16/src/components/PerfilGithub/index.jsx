@@ -8,10 +8,9 @@ export function PerfilGithub({ perfil }) {
     setPerfilNormalizado({
       login: perfil.login,
       imgUrl: perfil.avatar_url,
-      nome: perfil.name ? perfil.name : perfil.login,
-      repositoriosPublicos: perfil.public_repos
+      nome: perfil.name ? perfil.name : perfil.login
     })
-  }, [perfil.avatar_url, perfil.login, perfil.name, perfil.public_repos])
+  }, [perfil.avatar_url, perfil.login, perfil.name]);
 
   useEffect(() => {
     usuarioNormalizado();
@@ -26,7 +25,7 @@ export function PerfilGithub({ perfil }) {
           alt={`Imagem do usuário ${perfilNormalizado.nome}`}
         />
       </div>
-      <h3>Oi eu sou {perfilNormalizado.nome} e tenho {perfilNormalizado.repositoriosPublicos} repositórios públicos </h3>
+      <h3>Oi eu sou {perfilNormalizado.nome}</h3>
     </div>
   )
 }
