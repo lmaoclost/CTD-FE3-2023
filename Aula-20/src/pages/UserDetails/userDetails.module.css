@@ -1,0 +1,10 @@
+.userDetails {
+  text-align: center;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 2rem 1rem;
+}
