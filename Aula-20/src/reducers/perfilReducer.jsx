@@ -1,16 +1,16 @@
-export const perfilReducer = (state, action) => {
+export const perfilReducer = (listaDePerfis, action) => {
   switch (action.type) {
     case 'ADICIONA_PERFIL': {
-      const perfilExiste = state.filter(user => (
-        user.id === action.payload.id
-      ));
+      const perfilExiste = listaDePerfis.filter(perfil => {
+        perfil.id === action.payload.id
+      });
 
       if (!perfilExiste.length) {
-        return [...state, action.payload];
+        return [...listaDePerfis, action.payload];
       }
-      return state;
+      return listaDePerfis;
     }
     default:
-      return state;
+      return listaDePerfis;
   }
 }
