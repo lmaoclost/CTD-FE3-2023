@@ -1,5 +1,5 @@
-- Contexts
-- https://pt-br.react.dev/learn/passing-data-deeply-with-context
+- Custom Hooks
+- https://react.dev/learn/reusing-logic-with-custom-hooks
 
 - Apresentação do Checkpoint 2
 - https://docs.google.com/document/d/1KeMYKRNz85g9e5Sg3Q5YJBOhhodU61txJIRW2mdhx5I/preview

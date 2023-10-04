@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 
-export function useAxios(url) {
+export function useApiRequest(url) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -14,9 +14,7 @@ export function useAxios(url) {
       }
     }
     loadData();
-  }, [url]);
+  }, [url])
 
   return data;
 }
-
-export default useAxios;

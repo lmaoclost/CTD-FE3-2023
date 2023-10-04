@@ -8,7 +8,7 @@ import styles from './home.module.css';
 
 export function Home() {
   // Estado para a listagem do perfil
-  const { perfis, addUsuarioALista } = useContext(GithubContext);
+  const { listaDePerfis, addUsuarioALista } = useContext(GithubContext);
 
   // Estado para o Form
   const [usuarioASerBuscado, setUsuarioASerBuscado] = useState('');
@@ -46,8 +46,8 @@ export function Home() {
             <button type="submit">Pesquisar</button>
           </form>
           <div className={styles.cardContainer}>
-            {perfis && (
-              perfis.map(perfil => {
+            {listaDePerfis && (
+              listaDePerfis.map(perfil => {
                 return (
                   <Link key={perfil.id} to={`/${perfil.login}`}>
                     <PerfilGithub perfil={perfil} />

@@ -2,17 +2,17 @@ import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PerfilGithub } from '../../components/PerfilGithub';
 import { GithubContext } from '../../contexts/GithubContext';
-import { useAxios } from '../../hooks/useAxios';
+import { useApiRequest } from '../../hooks/useApiRequest';
 
 import styles from './userDetails.module.css';
 
 export function UserDetails() {
   const { repositoryOwner } = useParams();
-  const repositoriosPerfil = useAxios(`/users/${repositoryOwner}/repos`);
+  const repositoriosPerfil = useApiRequest(`/users/${repositoryOwner}/repos`);
 
-  const { perfis, buscaPerfilPeloLogin } = useContext(GithubContext);
+  const { listaDePerfis, buscaPerfilPeloLogin } = useContext(GithubContext);
 
-  let perfil = buscaPerfilPeloLogin(perfis, repositoryOwner);
+  let perfil = buscaPerfilPeloLogin(listaDePerfis, repositoryOwner);
 
   return (
     <section className={styles.userDetails}>
