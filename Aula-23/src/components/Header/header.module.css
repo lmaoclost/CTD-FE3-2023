@@ -32,15 +32,15 @@
   list-style-type: none;
 }
 
-.header li a {
-  color: white;
+.header li button {
+  color: black;
   padding: 10px;
   border-radius: 9px;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
 
-.header li a:hover {
+.header li button:hover {
   background: red;
   color: black;
 }

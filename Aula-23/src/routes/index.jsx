@@ -4,9 +4,9 @@ import { Home } from '../pages/Home';
 import { UserDetails } from '../pages/UserDetails';
 import { Repository } from '../pages/Repository';
 import { NotFound } from '../pages/NotFound';
-import { RotaProtegida } from '../components/RotaProtegida';
 import { GithubContextProvider } from '../contexts/GithubContext';
 import { AuthContextProvider } from '../contexts/AuthContext';
+import { RotaProtegida } from '../components/RotaProtegida';
 
 export function RouteList() {
   return (
@@ -19,7 +19,7 @@ export function RouteList() {
               <Route path=":repositoryOwner" element={
                 <RotaProtegida>
                   <UserDetails />
-                </RotaProtegida >
+                </RotaProtegida>
               } />
               <Route path=":repositoryOwner/:repositoryName" element={<Repository />} />
               <Route path="*" element={<NotFound />} />

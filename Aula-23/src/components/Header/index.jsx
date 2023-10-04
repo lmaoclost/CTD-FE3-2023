@@ -15,12 +15,13 @@ export function Header() {
     }
   }
 
+
   return (
     <header className={styles.header}>
       <Link to="/"><h1>GitHubble</h1></Link>
       <nav>
         <ul>
-          <li><button onClick={() => alternaLogin()}>{`${token ? 'Deslogar' : 'Logar'}`}</button></li>
+          <li><button onClick={() => alternaLogin()}>{token ? 'Logout' : 'Login'}</button></li>
         </ul>
       </nav>
     </header>
